@@ -37,28 +37,21 @@ if __name__ == "__main__":
     driver = webdriver.Chrome()  # Initialize WebDriver instance
     while True:
         query = listen().lower()
-        if 'open google' in query:
+        if 'open google' in query or 'open chrome' in query or 'open google chrome' in query:
             speak("Opening Google Chrome")
             driver.get('https://www.google.com')
-        elif 'open youtube' in query:
+        elif 'open youtube' in query or 'open yt' in query:
             speak("Opening YouTube")
             driver.get('https://www.youtube.com/')
-        elif 'open instagram' in query:
-            speak("Opening Instagram")
-            driver.get('https://www.instagram.com/')
-        elif 'open mrbeast channel' in query:
-            speak("Opening Mister Beast's channel")
-            driver.get('https://www.youtube.com/@MrBeast')
+        elif 'open github' in query:
+            speak("Opening Git Hub")
+            driver.get('https://https://github.com/')
+       # elif 'open mrbeast channel' in query:
+       #     speak("Opening Mister Beast's channel")
+       #     driver.get('https://www.youtube.com/@MrBeast')
         elif 'open my page' in query:
-            speak("Opening your Instagram page")
-            driver.get('https://www.instagram.com/debugging_dost/')
-        elif 'jarvis can you find me a girlfriend' in query:
-            driver.close() 
-            speak("never")
-            speak("you will only find girlfriend in your dreems")
-            speak("it will never happen")
-            speak("you will die alone")
-            speak("girlfriend ha ha ha ha ha ") 
+            speak("Opening your Website")
+            driver.get('https://thefuneducator.wordpress.com/')
         elif 'exit' in query:
             speak("exiting")
             driver.quit()  # Quit the browser session
