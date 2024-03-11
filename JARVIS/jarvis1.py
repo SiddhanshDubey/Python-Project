@@ -46,9 +46,6 @@ if __name__ == "__main__":
         elif 'open github' in query:
             speak("Opening Git Hub")
             driver.get('https://https://github.com/')
-       # elif 'open mrbeast channel' in query:
-       #     speak("Opening Mister Beast's channel")
-       #     driver.get('https://www.youtube.com/@MrBeast')
         elif 'open my page' in query:
             speak("Opening your Website")
             driver.get('https://thefuneducator.wordpress.com/')
