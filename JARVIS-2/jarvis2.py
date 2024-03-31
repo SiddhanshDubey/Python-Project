@@ -35,7 +35,7 @@ def ai(prompt):
     else:
         raise ValueError("ANTHROPIC_API_KEY environment variable not set")'''
 
-    client = anthropic.Client(api_key='YOUR_API_KEY_HERE')
+    client = anthropic.Client(api_key='YPUR_API_KEY_HERE')
     response = client.messages.create(
         model="claude-2.1",
         max_tokens=1000,
@@ -83,6 +83,7 @@ def takeCommand():
         print(f"Speech recognition error: {e}")
         return ""
 
+# Main function to run the program
 if __name__ == "__main__":
     say("Hello! I am your personal assistant.")
     while True:
@@ -132,4 +133,6 @@ if __name__ == "__main__":
             if f"Open {app[0]}".lower() in query.lower():
                 say(f"Opening {app[0]} Sir...")
                 os.startfile(app[1])
-        
+        if 'exit' in query:
+            say("exiting")
+            break
