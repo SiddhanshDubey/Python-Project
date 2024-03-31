@@ -4,6 +4,7 @@ import win32com.client
 import webbrowser
 import glob
 import anthropic
+import datetime
 
 
 # Other initializations
@@ -55,7 +56,8 @@ def ai(prompt):
     if not os.path.exists("Anthropic"):    
         os.makedirs("Anthropic")
 
-    filename = ''.join(prompt.split('ai')[1:]).strip().replace(" ", "_") + ".txt"
+    timestamp = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
+    filename = f"{prompt.replace(' ', '_')}_{timestamp}.txt"
     filepath = os.path.join("Anthropic", filename)
 
     with open(filepath, "w", encoding="utf-8") as f:    
